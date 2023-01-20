@@ -14,8 +14,8 @@
 
 -- 3. Search for payment with customer email or payment id in one query. Add optional filters like date/date range, amount, currency
    SELECT a.name,b.amount FROM customers as a JOIN payments as b on a.id=b.customer_id
-   where a.email='kimtim@gmail.com;
-
+   where a.email='kimtim@gmail.com';
+ 
    SELECT a.name,b.amount FROM payments as b JOIN customers as a on a.id=b.customer_id
    where b.id=1;
 
