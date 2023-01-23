@@ -4,8 +4,8 @@ CREATE  TABLE Customers
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    phoneno VARCHAR(255) NOT NULL,
-    address varchar(255) not null
+    phoneno TEXT NOT NULL,
+    address TEXT not null
 )
 
 CREATE  TABLE currencies
@@ -46,7 +46,7 @@ CREATE  TABLE chargebacks
 (
       id bigserial PRIMARY KEY unique,
       transaction_id  bigint not null references transactions(id),
-      chargeback_status decimal,
+      chargeback_status varchar(255),
       chargeback_amount decimal
 )
 
@@ -57,7 +57,7 @@ CREATE  TABLE refunds
 (
       id bigserial PRIMARY KEY unique,
       transaction_id  bigint not null references transactions(id),
-      refund_status varchar,
+      refund_status varchar(255),
       refund_amount decimal
 )
 
